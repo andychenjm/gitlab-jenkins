@@ -1,0 +1,47 @@
+#auth fengjiawen
+#install phppackger for build
+
+cd /var/jenkins_home/workspace/sns-information && apt-get install composer
+
+apt-get update
+
+apt-get install php-pear
+apt-get install re2c
+apt-get install phing
+ apt-get install libxml2-dev
+ apt-get install libcurl3-openssl-dev
+ apt-get install libcurl4-gnutls-dev
+ apt-get install libbz2-dev
+ apt-get install libjpeg-dev
+ apt-get install libpng-dev
+ apt-get install libxpm-dev
+ apt-get install libfreetype6-dev
+ apt-get install libt1-dev
+ apt-get install libmcrypt-dev
+ apt-get install libmysql++-dev
+ apt-get install libxslt1-dev
+ apt-get install gcc
+
+
+wget  http://hk1.php.net/get/php-7.2.11.tar.gz/from/this/mirror
+
+
+apt-cache search php7
+
+
+./configure --prefix=/usr/local/php --enable-fpm --enable-inline-optimization --disable-debug --disable-rpath --enable-shared --enable-opcache  --with-mysql --with-mysqli --with-mysql-sock  --enable-pdo --with-pdo-mysql --with-gettext --enable-mbstring --with-iconv --with-mcrypt --with-mhash --enable-bcmath --enable-soap --with-libxml-dir --enable-pcntl --enable-shmop --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-sockets --with-zlib --enable-zip --enable-bz2 --without-sqlite3 --without-pdo-sqlite --with-pear --with-libdir=/lib/x86_64-linux-gnu --with-gd --with-jpeg-dir=/usr/lib --enable-gd-native-ttf --enable-xml
+
+
+make && make install
+
+
+
+加入系统变量
+ 
+echo "PATH=$PATH:/usr/local/php/bin">> /etc/profile
+echo "export PATH">> /etc/profile
+source /etc/profile
+ 
+php -v
+
+
